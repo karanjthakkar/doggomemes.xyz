@@ -1,0 +1,20 @@
+{
+  "name": "meme-generator-talk",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "server": "nodemon server/src"
+  },
+  "author": "Karan Thakkar <karanjthakkar@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "chrome-launcher": "0.6.0",
+    "chrome-remote-interface": "0.24.5",
+    "hapi": "16.5.2",
+    "query-string": "5.0.0",
+    "uuid": "3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.11.0"
+  }
+}

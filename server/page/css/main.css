@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Oswald';
+  src: url('../fonts/Oswald.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 1280px;
+  height: 1280px;
+  padding: 60px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.text {
+  font-family: 'Oswald', sans-serif;
+  white-space: pre-wrap;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  outline: none;
+  border: 0;
+  max-height: 1160px;
+  width: 1160px;
+  font-size: 80px;
+  text-shadow: 0px 0px 4px #000;
+  line-height: 1.25em;
+  word-wrap: break-word;
+}
