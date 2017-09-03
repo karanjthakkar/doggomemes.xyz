@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "server": "nodemon server/src",
-    "client": "cd client && react-scripts start"
+    "client": "cd client && react-scripts start",
+    "client:deploy": "cd client && react-scripts build"
   },
   "author": "Karan Thakkar <karanjthakkar@gmail.com>",
   "license": "ISC",
