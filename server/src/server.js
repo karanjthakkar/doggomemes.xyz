@@ -16,7 +16,8 @@ const init = Page => {
   });
   server.connection({
     host: process.env.HOST || 'localhost',
-    port: process.env.PORT || 8111
+    port: process.env.PORT || 8111,
+    routes: { cors: true }
   });
 
   // Register static file server plugin

@@ -1,2 +1,3 @@
 server/out/*.png
+client/build
 node_modules

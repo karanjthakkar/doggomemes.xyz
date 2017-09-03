@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "server": "nodemon server/src"
+    "server": "nodemon server/src",
+    "client": "cd client && react-scripts start"
   },
   "author": "Karan Thakkar <karanjthakkar@gmail.com>",
   "license": "ISC",
@@ -13,9 +14,14 @@
     "hapi": "16.5.2",
     "inert": "4.2.1",
     "query-string": "5.0.0",
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
+    "react-slick": "0.15.0",
+    "slick-carousel": "1.7.1",
     "uuid": "3.1.0"
   },
   "devDependencies": {
-    "nodemon": "1.11.0"
+    "nodemon": "1.11.0",
+    "react-scripts": "1.0.13"
   }
 }

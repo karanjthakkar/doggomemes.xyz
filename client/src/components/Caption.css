@@ -1,0 +1,44 @@
+.caption {
+  width: 320px;
+  height: 320px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 15px;
+}
+
+.caption__text {
+  font-family: 'Oswald', sans-serif;
+  white-space: pre-wrap;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  outline: none;
+  border: 0;
+  max-height: 290px;
+  width: 290px;
+  font-size: 20px;
+  text-shadow: 0px 0px 4px #000;
+  line-height: 1.25em;
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 375px) {
+  .caption {
+    width: 256px;
+    height: 256px;
+    padding: 12px;
+  }
+
+  .caption__text {
+    max-height: 232px;
+    width: 232px;
+    font-size: 16px;
+  }
+}

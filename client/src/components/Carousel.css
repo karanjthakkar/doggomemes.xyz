@@ -1,0 +1,27 @@
+.carousel {
+  margin-right: 100px;
+  width: 320px;
+}
+
+.carousel__image {
+  width: 320px;
+  height: 320px;
+}
+
+@media screen and (max-width: 848px) {
+  .carousel {
+    margin-right: 0;
+    margin-bottom: 48px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .carousel {
+    width: 256px;
+  }
+
+  .carousel__image {
+    width: 256px;
+    height: 256px;
+  }
+}
