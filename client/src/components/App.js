@@ -3,7 +3,9 @@ import Carousel from './Carousel';
 import Caption from './Caption';
 import './App.css';
 
-const BASE_URL = 'http://localhost:8111';
+const BASE_URL = process.env.NODE_ENV === 'production'
+  ? 'https://doggomemes.now.sh'
+  : 'http://localhost:8111';
 
 class App extends Component {
   state = {

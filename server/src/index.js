@@ -6,7 +6,15 @@ const server = require('./server');
 
 ChromeLauncher.launch({
   port: 9222,
-  chromeFlags: ['--headless', '--disable-gpu', '--window-size=1280,1280']
+  chromeFlags: [
+    '--headless',
+    '--disable-gpu',
+    '--window-size=1280,1280',
+    '--no-sandbox'
+  ],
+  chromePath: process.env.NODE_ENV === 'production'
+    ? '/usr/bin/google-chrome'
+    : undefined
 })
   .then(() => {
     CDP().then(
