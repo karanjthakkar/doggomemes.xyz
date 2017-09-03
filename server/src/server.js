@@ -1,4 +1,5 @@
 const Hapi = require('hapi');
+const Inert = require('inert');
 const Path = require('path');
 const imageMaker = require('./image-maker');
 
@@ -17,6 +18,9 @@ const init = Page => {
     host: process.env.HOST || 'localhost',
     port: process.env.PORT || 8111
   });
+
+  // Register static file server plugin
+  server.register(Inert, () => {});
 
   // Route for image generation based on payload options
   server.route({
@@ -38,6 +42,17 @@ const init = Page => {
           reply(data).code(200);
         }
       );
+    }
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/assets/generated/{fileName*}',
+    handler(request, reply) {
+      reply.file(request.params.fileName, {
+        mode: request.query.download === '1' ? 'attachment' : false,
+        confine: Path.resolve(__dirname, '../out')
+      });
     }
   });
 
