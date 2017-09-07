@@ -32,7 +32,7 @@ const init = Page => {
         text = request.payload['text'],
         name = request.payload['name'];
 
-      imageMaker.make(
+      imageMaker.process(
         Page,
         {
           text,

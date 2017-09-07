@@ -3,10 +3,12 @@ const uuidV4 = require('uuid');
 const fs = require('fs');
 const Path = require('path');
 
+const TaskManager = require('./task-manager');
+
 const IMAGE_FILE_FORMAT = 'png';
 
-const make = async (Page, options, callback) => {
-  const { text, backgroundId, name = uuidV4() } = options;
+const _generate = async task => {
+  const { Page, text, backgroundId, name = uuidV4(), callback } = task;
   const queryParams = queryString.stringify({
     text,
     backgroundId
@@ -32,12 +34,31 @@ const make = async (Page, options, callback) => {
     Path.resolve(__dirname, `../out/${name}.${IMAGE_FILE_FORMAT}`),
     Buffer.from(data, 'base64')
   );
+
+  // Send the response down the wire and pick up the next task
   callback(null, {
     success: true,
     image_name: `${name}.${IMAGE_FILE_FORMAT}`
   });
 };
 
+const process = (Page, options, callback) => {
+  const { text, backgroundId, name } = options;
+  TaskManager.createTask({
+    taskFn: _generate,
+    taskData: {
+      Page,
+      text,
+      backgroundId,
+      name,
+      callback
+    }
+  });
+  if (TaskManager.isTaskQueueStopped) {
+    TaskManager.pickNextTask();
+  }
+};
+
 module.exports = {
-  make
+  process
 };
