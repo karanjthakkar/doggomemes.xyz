@@ -23,7 +23,7 @@ My talk on `Building a meme generator using React, Headless Chrome and Nodejs` a
 
 - **Speakerdeck Slides**: https://bit.ly/doggomemes-slides
 - **Hi-res keynote presentation**: https://bit.ly/doggomemes-keynote
-- **Video Link**: Will be updated soon.
+- **Video Link**: https://bit.ly/doggotalk
 
 # License
 
